@@ -1,12 +1,10 @@
-import { useState} from "react";
+import { useState } from "react";
 import NewProject from "./components/NewProject";
-import Sidebar from "./components/Sidebar";
+import ProjectSidebar from "./components/ProjectSidebar";
 import NoProjectSelected from "./components/NoProjectSelected";
 function App() {
   const [projectState,setProjectState] = useState({
     selectedProjectId: undefined, 
-    // undefined" there is no projects 
-    // null : there is a projects but not selected
     projects: [],
   });
 
@@ -46,7 +44,7 @@ function App() {
      content = <NewProject onAdd={handleAddProject}/>
   return (
     <main className="h-screen my-8 flex gap-8 ">
-      <Sidebar  onStartAddProject={handleStartAddProject}/>
+      <ProjectSidebar  onStartAddProject={handleStartAddProject}/>
       {content}
     </main>
   );
